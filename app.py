@@ -22,14 +22,14 @@ db = mongo.sih  # Replace 'mydatabase' with your database name
 news = db.news
 
 #SMS setup:
-# account_sid = 'AC467f69d0b372a258e6948588929cd6b1'
-# auth_token = '4ea41b2c32e137fcbc50b9fcf42a4e5c'
-# client = Client(account_sid, auth_token)
-# twilio_phone_number = '+13342343980'
-# # Recipient's phone number (including country code, e.g., +1 for the USA)
-# recipient_phone_number = '+918637831983'
-# # Message content
-# message_body = 'Hello, this is a test message from ssn!'
+account_sid = 'AC467f69d0b372a258e6948588929cd6b1'
+auth_token = '4ea41b2c32e137fcbc50b9fcf42a4e5c'
+client = Client(account_sid, auth_token)
+twilio_phone_number = '+13342343980'
+# Recipient's phone number (including country code, e.g., +1 for the USA)
+recipient_phone_number = '+918637831983'
+# Message content
+message_body = 'Hello, this is a test message from ssn!'
 
 #Phone Number Map of PIB Officers:
 phoneNumbers = {
