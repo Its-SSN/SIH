@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify
 from pymongo import MongoClient
 from bson import json_util
 from flask_cors import CORS, cross_origin
-# from twilio.rest import Client
+from twilio.rest import Client
 from model import fun
 import threading
 
@@ -22,20 +22,20 @@ db = mongo.sih  # Replace 'mydatabase' with your database name
 news = db.news
 
 #SMS setup:
-# account_sid = 'AC467f69d0b372a258e6948588929cd6b1'
-# auth_token = '4ea41b2c32e137fcbc50b9fcf42a4e5c'
-# client = Client(account_sid, auth_token)
-# twilio_phone_number = '+13342343980'
-# # Recipient's phone number (including country code, e.g., +1 for the USA)
-# recipient_phone_number = '+918637831983'
-# # Message content
-# message_body = 'Hello, this is a test message from ssn!'
+account_sid = 'AC467f69d0b372a258e6948588929cd6b1'
+auth_token = '4ea41b2c32e137fcbc50b9fcf42a4e5c'
+client = Client(account_sid, auth_token)
+twilio_phone_number = '+13342343980'
+# Recipient's phone number (including country code, e.g., +1 for the USA)
+recipient_phone_number = '+918637831983'
+# Message content
+message_body = 'Hello, this is a test message from ssn!'
 
 #Phone Number Map of PIB Officers:
-# phoneNumbers = {
-#     "rail":"+918637831983",
-#     "tech":"+918001172472"
-# }
+phoneNumbers = {
+    "rail":"+918637831983",
+    "tech":"+918001172472"
+}
 
 # Define a global variable to control the task
 stop_task = False
@@ -86,14 +86,14 @@ def postNews():
     news.insert_many(newsData)
     return "success"
 
-# @app.route("/send_mail")
-# def sendMail():
-#     message = client.messages.create(
-#         body=message_body,
-#         from_=twilio_phone_number,
-#         to=recipient_phone_number
-#     )
-#     print(f"Message sent successfully with SID: {message.sid}")
+@app.route("/send_mail")
+def sendMail():
+    message = client.messages.create(
+        body=message_body,
+        from_=twilio_phone_number,
+        to=recipient_phone_number
+    )
+    print(f"Message sent successfully with SID: {message.sid}")
 
 
 @app.route('/start_task')
