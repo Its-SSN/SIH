@@ -1,5 +1,8 @@
 # Automated Feedback System for Press Information Bureau For Internal SIH
 
+## Website Demo
+![website demo](./image/image.jpg)
+
 ## Overview
 
 The Automated Feedback System for Press Information Bureau (PIB) is a software solution designed to monitor and categorize news articles and videos published in regional languages across various media sources. It employs Artificial Intelligence and Machine Learning techniques to provide real-time feedback to the Government of India regarding news sentiment and departmental relevance.
